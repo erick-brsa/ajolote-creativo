@@ -26,6 +26,10 @@
 	margin: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	margin-top: var(--header-height);
 	min-height: calc(100vh - var(--header-height));
@@ -71,6 +75,8 @@ ul {
 	left: 0;
 	z-index: 1;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+	box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
 }
 
 .logo {
@@ -130,11 +136,18 @@ ul {
 /*====== HERO ======*/
 
 .hero {
-	margin-top: 200px;
-	margin-bottom: 200px;
+	padding-top: 120px;
+	padding-bottom: 120px;
 	width: 100%;
 	display: grid;
 	place-items: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.5),
+		rgba(0, 0, 0, 0.5)
+	   ),url('https://images.unsplash.com/photo-1682397972818-ae4ee9e565bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
 }
 
 .hero__container {
@@ -146,7 +159,7 @@ ul {
 }
 
 .hero__title {
-	font-size: 5rem;
+	font-size: 4rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
@@ -158,6 +171,7 @@ ul {
 .hero__description {
 	text-align: center;
 	font-weight: 600;
+	color: var(--text-color-light);
 }
 
 .hero__email {
@@ -180,7 +194,7 @@ ul {
 
 .hero__email-input:focus,
 .hero__email-btn:focus {
-	outline: 2px solid black;
+	outline: 2px solid var(--second-color);
 	outline-offset: -2px;
 }
 
@@ -199,12 +213,31 @@ ul {
 	color: var(--text-color-light);
 }
 
+@media (min-width: 768px) {
+	.hero {
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+	.hero__title {
+		font-size: 5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.hero {
+		padding-top: 200px;
+		padding-bottom: 200px;
+	}
+}
+
+
 /*====== SUSCRIPTION ======*/
 
 .subscription {
 	display: flex;
 	justify-content: center;
-	padding: 2rem 0;
+	padding: 4rem 0;
+	width: 100%;
 }
 
 .subscription__container {
@@ -212,8 +245,8 @@ ul {
 	width: 100%;
 	display: grid;
 	align-items: center;
-	gap: 1rem;
-	padding: 1rem;
+	gap: 2rem;
+	padding: 2rem;
 }
 
 @media (min-width: 1024px) {
@@ -222,9 +255,7 @@ ul {
 	}
 }
 
-.subscription__video  {
-	/* padding: 2rem; */
-}
+.subscription__video  {}
 
 .subscription__video video {
 	width: 100%;
@@ -245,34 +276,96 @@ ul {
 	-webkit-text-fill-color: transparent;
 }
 
+.subscription__idea {
+	display: flex;
+}
+
+.subscription__idea-input {
+	padding: 0.8rem 1rem;
+	font-size: 1rem;
+	border-radius: 8px 0 0 8px;
+	background-color: #FFF;
+	border: 2px solid var(--first-color-light);
+	border-right: 0;
+}
+
+.subscription__idea-input::placeholder {
+	color: var(--text-color-light);
+}
+
+.subscription__idea-input:focus,
+.subscription__idea-btn:focus {
+	outline: 2px solid var(--second-color);
+	outline-offset: -2px;
+}
+
+.subscription__idea-btn {
+	background-color: var(--first-color-light);
+	color: #fff;
+	border-radius: 0 8px 8px 0;
+	border: 0;
+	outline: 2px solid var(--first-color-light);
+	outline-offset: -2px;
+	font-size: 1rem;
+}
+
 /*====== FEATURES ======*/
 
 .features {
 	width: 100%;
-	background-color: var(--second-color);
+	background-color: var(--bg-color-alt);
 	padding: 4rem 0px;
 }
 
 .features__container {
 	display: grid;
 	width: 100%;
-	grid-template-columns: repeat(2, 1fr);
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1400px;
-	gap: 2rem;
 	padding: 2rem;
+	gap: 2rem;
 }
 
 .feature {
 	justify-content: center;
-	display: flex;
 	background: #FFF;
-	height: 100px;
 	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.feature__img {
+	width: 100%;
+}
+
+.feature__img img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.feature__content {
+	padding: 1rem;
+}
+
+@media (min-width: 768px) {
+	.features__container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.feature__img img {
+		height: 250px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.feature__img img {
+		height: 250px;
+	}
 }
 
 /*====== FOOTER ======*/
+
 .footer {
 	width: 100%;
 	padding: 1rem;
