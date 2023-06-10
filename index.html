@@ -11,7 +11,7 @@
     <body>
         <header class="header">
             <nav class="nav">
-                <a class="logo">
+                <a href="/" class="logo">
                     <img src="/img/ajolote.png">
                 </a>
                 <ul class="nav__list">
@@ -26,8 +26,8 @@
                     </li>
                 </ul>
                 <div class="actions">
-                    <a href="#">Iniciar sesión</a>
-                    <a href="#">Registrarse</a>
+                    <a href="#" class="actions-btn">Iniciar sesión</a>
+                    <a href="#" class="actions-btn2">Registrarse</a>
                 </div>
             </nav>
         </header>
@@ -42,26 +42,42 @@
                     </p>
                     <div class="hero__email">
                         <input type="email" name="email" id="email" class="hero__email-input" placeholder="Correo electrónico">
-                        <button class="hero__email-button">Enviar</button>
+                        <button class="hero__email-btn">Enviar</button>
                     </div>
                     <p class="hero__text">Registra tu correo para recibir <b>descuentos</b>.</p>
                 </div>
             </section>
 
             <section class="subscription">
-                
+                <div class="subscription__container">
+                    <div class="subscription__video">
+                        <video controls poster="https://cdn.videvo.net/videvo_files/video/premium/video0036/thumbnails/computer_code00_small.jpg">
+                            <source type="type/webp" src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.webm">
+                            <source type="type/mp4" src="https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.mp4">
+                        </video>
+                    </div>
+                    <div class="subscription__description">
+                        <h3 class="subscription__title">Suscríbete para recibir las últimas novedades</h3>
+                        <p>Estamos obsesionados con estos increíbles animales acuáticos y queremos compartir su encanto contigo a través de nuestras prendas de alta calidad.</p>
+                        
+                        <p>Compartenos tus ideas.</p>
+                        <div class="subscription__idea">
+                            <input type="text" name="email" id="email" class="subscription__idea-input" placeholder="Correo electrónico">
+                            <button class="subscription__idea-btn">Enviar</button>
+                        </div>
+                    </div>
+                </div>
             </section>
-
-            <section class="features section">
+            <section class="features">
                 <div class="features__container">
-                    <article>Característica 1</article>
-                    <article>Característica 2</article>
-                    <article>Característica 3</article>
-                    <article>Característica 4</article>
+                    <article class="feature">Característica 1</article>
+                    <article class="feature">Característica 2</article>
+                    <article class="feature">Característica 3</article>
+                    <article class="feature">Característica 4</article>
                 </div>
             </section>
         </main>
-        <footer>
+        <footer class="footer">
             <p>Made with ❤️ by Erick Briones</p>
         </footer>
     </body>
