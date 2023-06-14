@@ -74,9 +74,8 @@ ul {
 	top: 0;
 	left: 0;
 	z-index: 1;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-	box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+	box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
 }
 
 .logo {
@@ -90,6 +89,19 @@ ul {
 .logo img {
 	padding: 1rem;
 	height: var(--header-height);
+}
+
+.menu-btn {
+	background-color: var(--bg-color);
+	border: 2px solid #000;
+	border-radius: 4px;
+	cursor: pointer;
+	display: grid;
+	place-items: center;
+}
+
+.menu-btn svg {
+	width: 2rem;
 }
 
 .nav {
@@ -111,6 +123,11 @@ ul {
 	font-weight: 600;
 }
 
+.nav__item:nth-child(4),
+.nav__item:nth-child(5) {
+	display: none;
+}
+
 .actions {
 	display: flex;
 	gap: 1.5rem;
@@ -124,13 +141,66 @@ ul {
 .actions-btn2 {
 	background-color: var(--first-color-light);
 	padding: 0.5rem 1rem;
-	color: #FFF;
+	color: #fff;
 	border-radius: 4px;
 	transition: 0.2s;
 }
 
 .actions-btn2:hover {
 	background-color: var(--first-color);
+}
+
+.menu-btn {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.nav {
+		padding: 0 2rem;
+		justify-content: space-between;
+		position: relative;
+	}
+
+	.nav__list {
+		right: -500%;
+		position: absolute;
+		transition: 0.5s;
+		top: var(--header-height);
+		flex-direction: column;
+		gap: 1rem;
+		width: 70%;
+		min-height: calc(100vh - var(--header-height));
+		z-index: 10;
+	}
+
+	.open {
+		padding: 0;
+		background-color: var(--second-color-light);
+		right: 0;
+	}
+
+	.nav__item {
+		padding: 1rem;
+	}
+
+	.nav__item:hover {
+		background-color: var(--second-color);
+	}
+	.nav__item:nth-child(4){
+		margin-top: 2rem;
+	}
+	.nav__item:nth-child(4),
+	.nav__item:nth-child(5) {
+		display: block;
+	}
+
+	.actions {
+		display: none;
+	}
+
+	.menu-btn {
+		display: block;
+	}
 }
 
 /*====== HERO ======*/
@@ -141,13 +211,14 @@ ul {
 	width: 100%;
 	display: grid;
 	place-items: center;
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-image: linear-gradient(
-		to right,
-		rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)
-	   ),url('https://images.unsplash.com/photo-1682397972818-ae4ee9e565bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+			to right,
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.5)
+		),
+		url('https://images.unsplash.com/photo-1682397972818-ae4ee9e565bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
 }
 
 .hero__container {
@@ -163,7 +234,11 @@ ul {
 	font-weight: 800;
 	text-transform: uppercase;
 	text-align: center;
-	background-image: linear-gradient(45deg, var(--first-color), var(--first-color-light));
+	background-image: linear-gradient(
+		45deg,
+		var(--first-color),
+		var(--first-color-light)
+	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -183,7 +258,7 @@ ul {
 	padding: 0.8rem 1rem;
 	font-size: 1rem;
 	border-radius: 8px 0 0 8px;
-	background-color: #FFF;
+	background-color: #fff;
 	border: 2px solid var(--first-color-light);
 	border-right: 0;
 }
@@ -230,7 +305,6 @@ ul {
 	}
 }
 
-
 /*====== SUSCRIPTION ======*/
 
 .subscription {
@@ -255,7 +329,8 @@ ul {
 	}
 }
 
-.subscription__video  {}
+.subscription__video {
+}
 
 .subscription__video video {
 	width: 100%;
@@ -263,7 +338,7 @@ ul {
 }
 
 .subscription__description {
-	display: flex; 
+	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 }
@@ -271,7 +346,11 @@ ul {
 .subscription__title {
 	font-size: 2rem;
 	font-weight: 800;
-	background-image: linear-gradient(45deg, var(--first-color), var(--first-color-light));
+	background-image: linear-gradient(
+		45deg,
+		var(--first-color),
+		var(--first-color-light)
+	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -284,7 +363,7 @@ ul {
 	padding: 0.8rem 1rem;
 	font-size: 1rem;
 	border-radius: 8px 0 0 8px;
-	background-color: #FFF;
+	background-color: #fff;
 	border: 2px solid var(--first-color-light);
 	border-right: 0;
 }
@@ -329,10 +408,11 @@ ul {
 
 .feature {
 	justify-content: center;
-	background: #FFF;
+	background: #fff;
 	border-radius: 4px;
 	overflow: hidden;
-	box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+	box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+		rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
 .feature__img {
