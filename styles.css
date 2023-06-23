@@ -496,6 +496,10 @@ ul {
 	width: fit-content;
 }
 
+.overview__btn:hover {
+	background-color: var(--bg-color-alt);
+}
+
 .carousel {
 	padding: 2rem 2rem 4rem 2rem ;
 	height: 100%;
@@ -527,6 +531,101 @@ ul {
 @media (min-width: 920px) {
 	.success-stories__container {
 		grid-template-columns: 7fr 5fr;
+	}
+}
+
+/*====== HOW DOES IT WORK ======*/
+
+.how-does-it-work {
+	width: 100%;
+	background-color: var(--bg-color);
+	padding: 4rem 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+.how-does-it-work__container {
+	max-width: 1400px;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.how-does-it-work__info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.how-does-it-work__info-title {
+	font-weight: 700;
+}
+
+.how-does-it-work__info-text {
+
+}
+
+.how-does-it-work__info-btn {
+	background-color: var(--first-color-light);
+	padding: 0.5rem 1rem;
+	color: #fff;
+	border-radius: 4px;
+	transition: 0.2s;	
+	border: none;
+}
+
+.how-does-it-work__info-btn:hover {
+	background-color: var(--first-color);
+}
+
+.how-does-it-work__steps {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 2rem;
+}
+
+.step__card {
+	background: var(--color-white);
+	box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+	border-radius: 4px;
+}
+
+.step__card-img {
+	height: 150px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.step__content {
+	padding: 1rem;
+}
+.step__content-title {
+	font-weight: 700;
+}
+
+.step__content-text {}
+
+@media (min-width: 576px) {
+	.how-does-it-work__steps {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 768px) {
+	.how-does-it-work__info-title {
+		text-align: center;
+	}
+	.how-does-it-work__info-text {
+		text-align: center;
+		width: 70%;
+	}
+}
+
+@media (min-width: 992px) {
+	.how-does-it-work__steps {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
